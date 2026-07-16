@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "CallMeApp"
 include(":app")
- 
+include(":core:ui")
