@@ -14,5 +14,10 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "CallMeApp"
+
 include(":app")
 include(":core:ui")
+include(":core:domain")
+include(":core:data")
+include("core:di")
+include(":feature:auth")
