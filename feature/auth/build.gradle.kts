@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("kotlin-kapt")
 }
 
 android {
@@ -21,7 +22,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 
 }
@@ -29,4 +30,11 @@ android {
 dependencies {
     implementation(project(":core:domain"))
     implementation(project(":core:ui"))
+    implementation(project(":core:di"))
+
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
+
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.runtime.compose)
 }
