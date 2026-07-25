@@ -41,6 +41,8 @@ android {
 dependencies {
     implementation(project(":core:data"))
     implementation(project(":core:di"))
+    implementation(project(":core:domain"))
+    implementation(project(":core:security"))
     implementation(project(":feature:auth"))
 
     implementation(platform(libs.androidx.compose.bom))
