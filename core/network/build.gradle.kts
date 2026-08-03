@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.callme.security"
+    namespace = "com.callme.network"
     compileSdk {
         version = release(36)
     }
@@ -24,20 +24,32 @@ android {
         jvmTarget = "17"
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
     implementation(project(":core:domain"))
     implementation(project(":core:di"))
+    implementation(project(":core:security"))
 
+    // Dagger
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)
 
+    // Coroutines
     implementation(libs.kotlinx.coroutines.core)
 
-    // EncryptedSharedPreferences
-    implementation(libs.androidx.security.crypto)
-    implementation(libs.androidx.core.ktx)
+    // Retrofit
+    api(libs.retrofit)
+    implementation(libs.retrofit.converter.moshi)
+    // OkHttp
+    api(libs.okhttp)
+    api(libs.okhttp.logging.interceptor)
+    // Moshi
+    api(libs.moshi)
+    implementation(libs.moshi.kotlin)
 
     // Test
     testImplementation(libs.junit)
