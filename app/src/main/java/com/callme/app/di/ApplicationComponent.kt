@@ -3,6 +3,7 @@ package com.callme.app.di
 import android.content.Context
 import com.callme.di.scopes.ApplicationScope
 import com.callme.feature.auth.di.AuthDependencies
+import com.callme.network.di.NetworkModule
 import com.callme.security.di.SecurityBindsModule
 import com.callme.security.di.SecurityProvidesModule
 import dagger.BindsInstance
@@ -10,6 +11,7 @@ import dagger.Component
 
 @ApplicationScope
 @Component(modules = [
+    NetworkModule::class,
     SecurityBindsModule::class,
     SecurityProvidesModule::class
 ])
