@@ -1,9 +1,9 @@
-package com.callme.feature.auth.di
+package com.callme.feature.splash.di
 
 import com.callme.domain.repository.AuthRepository
 import com.callme.domain.storage.TokenStorage
 
-interface AuthDependencies {
+interface SplashDependencies {
     fun authRepository(): AuthRepository
     fun tokenStorage(): TokenStorage
 }
