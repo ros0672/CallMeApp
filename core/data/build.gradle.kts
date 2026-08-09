@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-kapt")
 }
 
 android {
@@ -27,4 +28,11 @@ android {
 
 dependencies {
     implementation(project(":core:domain"))
+    implementation(project(":core:di"))
+
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
+
+    // Coroutines
+    implementation(libs.kotlinx.coroutines.core)
 }

@@ -42,6 +42,7 @@ private val Shapes = Shapes(
     extraLarge = RoundedCornerShape(24.dp),
 )
 
+// TODO CallMeApp #18: move CallMeAppTheme and related classes to :core:ui (Phase II)
 @Composable
 fun CallMeAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),

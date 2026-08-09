@@ -48,7 +48,7 @@ class NetworkModule {
         moshi: Moshi
     ): Retrofit = Retrofit.Builder()
         .client(client)
-        .baseUrl("https://callmeapp.com/api") // TODO replace with actual URL
+        .baseUrl("https://callmeapp.com/api") // TODO CallMeApp #15: replace with actual URL
         .addConverterFactory(MoshiConverterFactory.create(moshi))
         .build()
 

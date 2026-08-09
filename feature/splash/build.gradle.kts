@@ -1,11 +1,12 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
     id("kotlin-kapt")
 }
 
 android {
-    namespace = "com.callme.di"
+    namespace = "com.callme.splash"
     compileSdk {
         version = release(36)
     }
@@ -27,6 +28,10 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:domain"))
+    implementation(project(":core:ui"))
+    implementation(project(":core:di"))
+
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)
 }

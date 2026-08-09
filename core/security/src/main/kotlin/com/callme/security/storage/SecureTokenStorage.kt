@@ -4,8 +4,9 @@ import android.content.SharedPreferences
 import androidx.core.content.edit
 import com.callme.domain.storage.TokenStorage
 import com.callme.security.di.SecurityProvidesModule.EncryptedSharedPrefs
+import javax.inject.Inject
 
-class SecureTokenStorage(
+class SecureTokenStorage @Inject constructor(
     @EncryptedSharedPrefs private val preferences: SharedPreferences
 ) : TokenStorage {
     override fun getToken(): String? {
