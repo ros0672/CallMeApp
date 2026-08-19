@@ -3,6 +3,7 @@ package com.callme.feature.auth.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import com.callme.domain.utils.EmailValidator
 import com.callme.domain.utils.Result
 import com.callme.domain.utils.ValidationResult
 import com.callme.feature.auth.domain.model.AuthEffect
@@ -84,7 +85,7 @@ class AuthViewModel @Inject constructor(
     private fun validateLogin(email: String, password: String): ValidationResult {
         return when {
             email.isBlank() -> ValidationResult.Error("Email cannot be empty")
-            !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() -> ValidationResult.Error(
+            !EmailValidator.isValidEmail(email) -> ValidationResult.Error(
                 "Invalid email format"
             )
 
@@ -100,7 +101,7 @@ class AuthViewModel @Inject constructor(
     ): ValidationResult {
         return when {
             email.isEmpty() -> ValidationResult.Error("Email cannot be empty")
-            !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() -> ValidationResult.Error(
+            !EmailValidator.isValidEmail(email) -> ValidationResult.Error(
                 "Invalid email format"
             )
 

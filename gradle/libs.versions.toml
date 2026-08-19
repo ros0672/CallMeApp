@@ -19,6 +19,7 @@ securityCrypto = "1.1.0"
 retrofit = "2.11.0"
 okHttp = "4.12.0"
 mockk = "1.13.16"
+turbine = "1.1.0"
 
 [libraries]
 androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "materialIconsExtended" }
@@ -51,6 +52,7 @@ retrofit-converter-moshi = { group = "com.squareup.retrofit2", name = "converter
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okHttp" }
 okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okHttp" }
 mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
